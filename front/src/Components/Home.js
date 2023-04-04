@@ -9,7 +9,8 @@ const URL = process.env.REACT_APP_BACKEND_URL;
 
 const InputOutput = () => {
   const [inputText, setInputText] = useState("");
-  const [answer, setAnswer] = useState("OpenAI Output");
+  const [openaiText, setOpenaiText] = useState("OpenAI Output");
+  const [wikiSummary, setwikiSummary] = useState("Wiki Output");
   const [imageURL, setImageURL] = useState("");
 
   const handleInputChange = (e) => {
@@ -21,7 +22,7 @@ const InputOutput = () => {
     console.log("input text before post: "+ inputText)
     axios.post(`${URL}/generateSummary`,{prompt: inputText}).then(res => {
       //console.log('res: '+(JSON.stringify(res.data.choices[0].text)))
-      setAnswer(JSON.stringify(res.data.choices[0].text))
+      setOpenaiText(JSON.stringify(res.data.choices[0].text))
     })
     axios.post(`${URL}/generateImage`,{prompt: inputText}).then(res => {
       const generatedImageURL= JSON.stringify(res.data.data[0].url)
@@ -40,13 +41,13 @@ const InputOutput = () => {
           <div className="generated-area">
             <div className="openai-div">
               <div className="openai-text-prompt-div">
-              {answer}
+              {openaiText}
               </div>
               <img src={imageURL} class="generated-image" alt='Waiting for image'/>
             </div>
             <div className="wikipedia-div">
               <div className="wiki-text-prompt-div">
-              {answer}
+              {wikiSummary}
               </div>
               <img src={imageURL} class="generated-image" alt='Waiting for image'/>
             </div>

@@ -7,8 +7,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OpenaiService = void 0;
+const wikijs_1 = require("wikijs");
+const { Configuration, OpenAIApi } = require("openai");
+require('dotenv').config();
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 const common_1 = require("@nestjs/common");
 let OpenaiService = class OpenaiService {
+    textPromptGeneration(wikiURL) {
+        console.log("prompt we get inside service: " + wikiURL);
+        try {
+            return openai.createCompletion({
+                model: "text-davinci-002",
+                prompt: `summarize this article from wikipedia: ${wikiURL}`,
+                temperature: 0,
+                max_tokens: 1000,
+            }).then((res) => {
+                console.log(JSON.stringify(res.data.choices[0].text));
+                return res.data;
+            });
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+    imageGeneration(wikiURL) {
+        try {
+            (0, wikijs_1.default)().page(wikiURL.replace(/(?:https?|ftp):\/\/en.wikipedia.org/g, "")).then(page => page.images()).then(console.log);
+        }
+        catch (error) {
+            throw error;
+        }
+    }
 };
 OpenaiService = __decorate([
     (0, common_1.Injectable)()

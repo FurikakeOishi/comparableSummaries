@@ -130,7 +130,7 @@ body{
 }
 
 .openai-text-prompt-div{
-    box-shadow: inset 1px 1px 10px rgb(224, 216, 216);
+    box-shadow: #D6D6E7 0 3px 7px inset;
     width: 50%;
     height: 100px;
     font-weight: 500;
@@ -150,7 +150,7 @@ body{
 }
 
 .wiki-text-prompt-div{
-    box-shadow: inset 1px 1px 10px rgb(224, 216, 216);
+    box-shadow: #D6D6E7 0 3px 7px inset;
     width: 50%;
     height: 100px;
     font-weight: 500;

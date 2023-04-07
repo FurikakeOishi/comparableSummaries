@@ -9,11 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OpenaiModule = void 0;
 const common_1 = require("@nestjs/common");
 const openai_controller_1 = require("./openai.controller");
+const openai_service_1 = require("./openai.service");
 let OpenaiModule = class OpenaiModule {
 };
 OpenaiModule = __decorate([
     (0, common_1.Module)({
-        controllers: [openai_controller_1.OpenaiController]
+        controllers: [openai_controller_1.OpenaiController],
+        providers: [openai_service_1.OpenaiService]
     })
 ], OpenaiModule);
 exports.OpenaiModule = OpenaiModule;

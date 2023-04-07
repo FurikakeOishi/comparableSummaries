@@ -8,7 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WikiService = void 0;
 const common_1 = require("@nestjs/common");
+const wikijs_1 = require("wikijs");
+const baseURL = 'https://en.wikipedia.org/wiki/';
 let WikiService = class WikiService {
+    getMainImagesUrlFromWikiArticle(wikiURL) {
+        console.log('inside wiki service: ' + wikiURL);
+        const articleTitle = wikiURL.replace(baseURL, "");
+        console.log('new wiki title: ' + articleTitle);
+        try {
+            return (0, wikijs_1.default)().page(articleTitle)
+                .then(page => page.mainImage())
+                .then((res) => { return res; });
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+    getArticleSummary(wikiURL) {
+        const articleTitle = wikiURL.replace(baseURL, "");
+        console.log('new wiki title: ' + articleTitle);
+        try {
+            return (0, wikijs_1.default)().page(articleTitle)
+                .then(page => page.summary())
+                .then((res) => { return res; });
+        }
+        catch (error) {
+            return error;
+        }
+    }
 };
 WikiService = __decorate([
     (0, common_1.Injectable)()

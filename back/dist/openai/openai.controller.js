@@ -30,6 +30,7 @@ let OpenaiController = class OpenaiController {
 };
 __decorate([
     (0, common_1.Post)('generateSummary'),
+    (0, common_1.Header)('Access-Control-Allow-Origin', '*'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
@@ -37,6 +38,7 @@ __decorate([
 ], OpenaiController.prototype, "generateTextResponse", null);
 __decorate([
     (0, common_1.Post)('generateImage'),
+    (0, common_1.Header)('Access-Control-Allow-Origin', '*'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

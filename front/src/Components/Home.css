@@ -1,5 +1,21 @@
-body{
-    background-color: #ffffff;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+:root{
+  --primary: #5680E9;
+  --background:#fff5c352 ;
+}
+
+.html{
+  height: 100%;
+}
+.background-div{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--background);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
 }
 
 
@@ -36,7 +52,7 @@ body{
     display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
 }
 
 .generate-button{
@@ -96,10 +112,11 @@ body{
     position: absolute;
     left: 6%;
     width: 80%;
+    top: 0px;
     height: auto;
     display: flex;
     padding: 50px;
-    margin-top: 4%;
+    margin-top: 3%;
     flex-wrap: wrap;
     flex-direction: column  ;
     background-color: #ffffff;
@@ -116,29 +133,33 @@ body{
 }
 
 .generated-area{
-    margin-top: 50px;
+    margin-top: 60px;
+    padding-bottom: 35px;
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content:space-between;
     border-top: 5px solid ;
-    border-image: repeating-linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89)) 20;
+    border-bottom: 5px solid ;
+    border-image: repeating-linear-gradient(to bottom right, #D1BFA5 , #D1BFA5 , #FFE9C6 , rgb(255, 122, 89)) 20;
 }
 
 .openai-div{
     display: block;
-    width: 50%;
+    width: 48%;
 }
 
 .openai-text-prompt-div{
-    box-shadow: #D6D6E7 0 3px 7px inset;
+    
+    text-align:justify;
+    box-shadow: #8b6b6179  0 3px 7px inset;
     min-width: 50%;
     max-width: 100%;
     min-height: 100px;
     max-height: fit-content;
     font-weight: 500;
     font-family: "JetBrains Mono",monospace;
-    font-size: 1vh;
-    text-align: center;
+    font-size: 2vh;
+    text-align: left;
     border-radius: 5px;
     padding: 20px;
     transition: 1.5s;
@@ -153,7 +174,7 @@ body{
 }
 
 .wiki-text-prompt-div{
-    box-shadow: #D6D6E7 0 3px 7px inset;
+    box-shadow: #8b6b6179 0 3px 7px inset;
     min-width: 50%;
     max-width: 100%;
     min-height: 100px;
@@ -161,7 +182,7 @@ body{
     font-weight: 500;
     font-family: "JetBrains Mono",monospace;
     font-size: 2vh;
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     transition: 0.15s;
     padding: 20px;
@@ -177,6 +198,106 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 5px;
     text-align: center;
+    border:2px solid #4b4c4db6;
+    
+    box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.data-title{
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.openai-text-title{
+  font-family: "JetBrains Mono",monospace;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 700ms ease;
+  background-image: 
+  url("https://media.istockphoto.com/id/1356298417/video/abstract-colorful-striped-background-animation.jpg?s=640x640&k=20&c=fiaECwMqftHmHKDVJ6a8gfaFebGPGnLSgoW69PFWoc0=");
+  background-size: 110% auto;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}:hover{
+  background-size: 120% auto;
+}
+
+.wiki-text-title{
+  font-family: "JetBrains Mono",monospace;
+  font-weight: 200;
+  letter-spacing: 1px;
+  transition: 700ms ease;
+  background-image: 
+  url("https://img.freepik.com/premium-vector/realistic-wood-texture-plank-background-fiber-texture-pattern-vector_532963-6218.jpg");
+  background-size: 110% auto;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}:hover{
+  background-size: 120% auto;
+}
+
+
+.logo-image{
+  width: 52px;
+  height: 50px;
+  right: 0px;
+  position: relative;
+  top: 50px;
+  margin-left: 10%;
+}
+
+@media only screen 
+and (max-width : 1222px) {
+/* Styles */
+
+.main-div{
+  width: auto;
+  margin-right: 2%;
+  margin-left: 2%;
+  left:0px;
+  right: 0px;
+}
+
+.background-div{
+  height:100vh;
+}
+
+.openai-div{
+  display: block;
+  width: 100%;
+}
+
+.generated-area{
+
+  flex-direction: column;
+}
+
+.wikipedia-div{
+  width: 100%;
+}
+
+.generate-button{
+  font-size: 14px;
+  padding-left: 6%;
+}
+
+.data-title{
+  font-size: 20px;
+  
+}
+
+
 }

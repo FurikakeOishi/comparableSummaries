@@ -9,32 +9,46 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WikiService = void 0;
 const common_1 = require("@nestjs/common");
 const wikijs_1 = require("wikijs");
-const baseURL = 'https://en.wikipedia.org/wiki/';
+const baseWikipediaURL = 'https://en.wikipedia.org/wiki/';
 let WikiService = class WikiService {
     getMainImagesUrlFromWikiArticle(wikiURL) {
         console.log('inside wiki service: ' + wikiURL);
-        const articleTitle = wikiURL.replace(baseURL, "");
+        const articleTitle = this.urlToString(wikiURL);
         console.log('new wiki title: ' + articleTitle);
-        try {
-            return (0, wikijs_1.default)().page(articleTitle)
-                .then(page => page.mainImage())
-                .then((res) => { return res; });
-        }
-        catch (error) {
-            throw error;
+        if (articleTitle === '')
+            return 'Empty Article';
+        else {
+            try {
+                return (0, wikijs_1.default)().page(articleTitle)
+                    .then(page => page.mainImage())
+                    .then((res) => { return res; });
+            }
+            catch (error) {
+                throw error;
+            }
         }
     }
     getArticleSummary(wikiURL) {
-        const articleTitle = wikiURL.replace(baseURL, "");
+        const articleTitle = this.urlToString(wikiURL);
         console.log('new wiki title: ' + articleTitle);
-        try {
-            return (0, wikijs_1.default)().page(articleTitle)
-                .then(page => page.summary())
-                .then((res) => { return res; });
+        if (articleTitle === '')
+            return 'Empty Article';
+        else {
+            try {
+                return (0, wikijs_1.default)().page(articleTitle)
+                    .then(page => page.summary())
+                    .then((res) => { return res; });
+            }
+            catch (error) {
+                return error;
+            }
         }
-        catch (error) {
-            return error;
-        }
+    }
+    urlToString(url) {
+        if (url === '')
+            return 'Empty URL';
+        else
+            return url.replace(baseWikipediaURL, "").replace(/^[a-zA-Z0-9-]$/g, "7").replace("%27", "\'");
     }
 };
 WikiService = __decorate([

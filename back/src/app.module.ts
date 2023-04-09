@@ -7,9 +7,10 @@ import { WikiService } from './placement/wiki.service';
 import { OpenaiService } from './openai/openai.service';
 import { OpenaiModule } from './openai/openai.module';
 import { OpenaiController } from './openai/openai.controller';
+import { ComparisonModule } from './comparison/comparison.module';
 
 @Module({
-  imports: [WikiModule, OpenaiModule],
+  imports: [WikiModule, OpenaiModule, ComparisonModule],
   controllers: [AppController,WikiController, OpenaiController],
   providers: [AppService, WikiService, OpenaiService],
 })

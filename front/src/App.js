@@ -5,7 +5,6 @@ import InputOutput from "./Components/Home";
 const App = () => {
   return (
     <div>
-
       <InputOutput />
     </div>
   );

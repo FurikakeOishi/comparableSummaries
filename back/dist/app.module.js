@@ -16,11 +16,12 @@ const wiki_service_1 = require("./placement/wiki.service");
 const openai_service_1 = require("./openai/openai.service");
 const openai_module_1 = require("./openai/openai.module");
 const openai_controller_1 = require("./openai/openai.controller");
+const comparison_module_1 = require("./comparison/comparison.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [wiki_module_1.WikiModule, openai_module_1.OpenaiModule],
+        imports: [wiki_module_1.WikiModule, openai_module_1.OpenaiModule, comparison_module_1.ComparisonModule],
         controllers: [app_controller_1.AppController, wiki_controller_1.WikiController, openai_controller_1.OpenaiController],
         providers: [app_service_1.AppService, wiki_service_1.WikiService, openai_service_1.OpenaiService],
     })

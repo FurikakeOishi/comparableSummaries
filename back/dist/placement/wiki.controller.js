@@ -21,14 +21,29 @@ let WikiController = class WikiController {
     }
     getWikiSummary(data) {
         console.log('wiki summary - inside controller: ' + data.article);
-        return this.wikiService.getArticleSummary(data.article);
+        try {
+            return this.wikiService.getArticleSummary(data.article);
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
     getWikiPhotos(data) {
         console.log('this is the url inside controller: ' + this.wikiService.getMainImagesUrlFromWikiArticle(data.article));
-        return this.wikiService.getMainImagesUrlFromWikiArticle(data.article);
+        try {
+            return this.wikiService.getMainImagesUrlFromWikiArticle(data.article);
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
     generateArticles() {
-        return this.wikiService.generateRandomArticle();
+        try {
+            return this.wikiService.generateRandomArticle();
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 };
 __decorate([

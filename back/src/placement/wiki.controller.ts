@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Header, Post } from '@nestjs/common';
+import { Body, Controller, Get, Header, Post, ServiceUnavailableException } from '@nestjs/common';
 import { WikiService } from './wiki.service';
 
 @Controller('wiki')
@@ -9,19 +9,32 @@ export class WikiController {
     @Header('Access-Control-Allow-Origin', '*')
     getWikiSummary(@Body() data): any{
       console.log('wiki summary - inside controller: '+data.article)
-       return this.wikiService.getArticleSummary(data.article)
+      try {
+        return this.wikiService.getArticleSummary(data.article) 
+      } catch (error) {
+        console.log(error)
+      }
     }
   
     @Post('wikiPhotos')
     @Header('Access-Control-Allow-Origin', '*')
     getWikiPhotos(@Body() data): any{
       console.log('this is the url inside controller: '+this.wikiService.getMainImagesUrlFromWikiArticle(data.article))
-       return this.wikiService.getMainImagesUrlFromWikiArticle(data.article)
+      try {
+        return this.wikiService.getMainImagesUrlFromWikiArticle(data.article) 
+      } catch (error) {
+        console.log(error)
+      }
     }
 
     @Get('generateRandomArticle')
     generateArticles():any{
-      return this.wikiService.generateRandomArticle();
+      try {
+        return this.wikiService.generateRandomArticle();
+      } catch (error) {
+        console.log(error)
+      }
+      
     }
 
 }

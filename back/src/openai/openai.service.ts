@@ -1,10 +1,11 @@
 import wiki from 'wikijs';
 const { Configuration, OpenAIApi } = require("openai");
-//require('dotenv').config()
+require('dotenv').config()
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 const openai = new OpenAIApi(configuration);
 
 import { Injectable } from '@nestjs/common';
@@ -26,13 +27,14 @@ export class OpenaiService {
       //   return res.data;
       // })
     }
-    catch(error){throw error;}
+    catch(error){
+      console.log(error)
+      }
   }
 
   imageGeneration(wikiURL: string): any{
     try{
       return wikiURL;
-      //wiki().page(wikiURL.replace(/(?:https?|ftp):\/\/en.wikipedia.org/g,"")).then(page => page.images()).then(console.log)
     //   return openai.createImage({
     //    n:1,
     //    prompt: `create an image based off of this article: ${wikiURL}`,
@@ -42,7 +44,7 @@ export class OpenaiService {
     //    return res.data;
     //  })
    }
-   catch(error){throw error;}
+   catch(error){}
   }
 
 }

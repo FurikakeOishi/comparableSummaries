@@ -31,11 +31,12 @@
     right:0px;
     width: auto;
     top: 0px;
-    
+    bottom:auto;
     height: auto;
     display: flex;
     padding: 50px;
     margin-top: 2%;
+    margin-bottom: 0px;
     flex-wrap: wrap;
     flex-direction: column  ;
     background-color: #ffffff;

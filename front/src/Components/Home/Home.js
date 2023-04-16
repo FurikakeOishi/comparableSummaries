@@ -74,6 +74,8 @@ const Home = () => {
       setwikiSummary(res.data)
       //console.log('res: '+(JSON.stringify(res.data.choices[0].text)))
       //setOpenaiText(JSON.stringify(res.data.choices[0].text))
+    }).catch((err)=>{
+      console.log(err)
     })
     axios.post(`${URL}/wiki/wikiPhotos`,{article: inputText}).then(res => {
       console.log('Wiki image url: '+res.data)
@@ -81,6 +83,8 @@ const Home = () => {
       //const generatedImageURL= JSON.stringify(res.data.data[0].url)
       //console.log('image URL: '+(generatedImageURL.replace(/"/g,"")))
       //setImageURL(generatedImageURL.replace(/"/g,""))
+    }).catch((err)=>{
+      console.log(err.message)
     })
   }
 

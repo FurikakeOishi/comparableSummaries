@@ -8,47 +8,63 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WikiService = void 0;
 const common_1 = require("@nestjs/common");
+const urlencode = require('urlencode');
 const wikijs_1 = require("wikijs");
 const baseWikipediaURL = 'https://en.wikipedia.org/wiki/';
 let WikiService = class WikiService {
     getMainImagesUrlFromWikiArticle(wikiURL) {
-        console.log('inside wiki service: ' + wikiURL);
-        const articleTitle = this.urlToString(wikiURL);
-        console.log('new wiki title: ' + articleTitle);
-        if (articleTitle === '')
+        if (wikiURL === '')
             return 'Empty Article';
         else {
             try {
+                console.log('inside wiki service: ' + wikiURL);
+                const articleTitle = this.urlToString(wikiURL);
+                console.log('new wiki title: ' + articleTitle);
                 return (0, wikijs_1.default)().page(articleTitle)
                     .then(page => page.mainImage())
                     .then((res) => { return res; });
             }
             catch (error) {
-                throw error;
+                return error.toString();
             }
         }
     }
     getArticleSummary(wikiURL) {
-        const articleTitle = this.urlToString(wikiURL);
-        console.log('new wiki title: ' + articleTitle);
-        if (articleTitle === '')
+        if (wikiURL === '')
             return 'Empty Article';
         else {
             try {
+                const articleTitle = this.urlToString(wikiURL);
+                console.log('new wiki title: ' + articleTitle);
                 return (0, wikijs_1.default)().page(articleTitle)
                     .then(page => page.summary())
                     .then((res) => { return res; });
             }
             catch (error) {
-                return error;
+                return error.toString();
             }
+        }
+    }
+    async generateRandomArticle() {
+        try {
+            const results = await (0, wikijs_1.default)().random(1);
+            const urlArray = await Promise.all(results.map(async (result) => {
+                const page = await (0, wikijs_1.default)().page(result);
+                const url = page.url();
+                return url;
+            }));
+            return urlArray;
+        }
+        catch (error) {
+            return error.toString();
         }
     }
     urlToString(url) {
         if (url === '')
             return 'Empty URL';
-        else
-            return url.replace(baseWikipediaURL, "").replace(/^[a-zA-Z0-9-]$/g, "7").replace("%27", "\'");
+        else {
+            return urlencode.decode(url, 'utf8').replace(baseWikipediaURL, "");
+        }
     }
 };
 WikiService = __decorate([

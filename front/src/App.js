@@ -1,11 +1,11 @@
 import './App.css';
 import React, { useState } from "react";
-import InputOutput from "./Components/Home";
+import Home from "./Components/Home/Home.js";
 
 const App = () => {
   return (
     <div>
-      <InputOutput />
+      <Home />
     </div>
   );
 };

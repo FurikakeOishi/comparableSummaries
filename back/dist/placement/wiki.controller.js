@@ -27,6 +27,9 @@ let WikiController = class WikiController {
         console.log('this is the url inside controller: ' + this.wikiService.getMainImagesUrlFromWikiArticle(data.article));
         return this.wikiService.getMainImagesUrlFromWikiArticle(data.article);
     }
+    generateArticles() {
+        return this.wikiService.generateRandomArticle();
+    }
 };
 __decorate([
     (0, common_1.Post)('wikiSummary'),
@@ -44,6 +47,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Object)
 ], WikiController.prototype, "getWikiPhotos", null);
+__decorate([
+    (0, common_1.Get)('generateRandomArticle'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Object)
+], WikiController.prototype, "generateArticles", null);
 WikiController = __decorate([
     (0, common_1.Controller)('wiki'),
     __metadata("design:paramtypes", [wiki_service_1.WikiService])

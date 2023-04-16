@@ -7,7 +7,7 @@ export class ComparisonController {
 
     @Post('compareTwoParagraphs')
     @Header('Access-Control-Allow-Origin', '*')
-    generateImageURL(@Body() data): any{
+    generateImageURL(@Body() data): number{
        return this.comparisonService.CompareParagraphs(data)
     }
 }

@@ -4,4 +4,5 @@ export declare class WikiController {
     constructor(wikiService: WikiService);
     getWikiSummary(data: any): any;
     getWikiPhotos(data: any): any;
+    generateArticles(): any;
 }

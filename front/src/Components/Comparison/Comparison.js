@@ -1,14 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 
 
 
 
 
-const Comparison = () => {
+const Comparison = ({openaiParagraph, wikiParagraph}) => {
 
+  const [paragraphsDistance, setParagraphsDistance] = useState(0);
+
+  
   return (
         <div>
-          <h1>THIS IS THE COMPARISON AREA</h1>
+          <h1>Using an algorithm based on Dice's coefficient, the similarity between the string in both paragrams is <span className="percentage"></span> </h1>
+          
         </div>
   );
 };

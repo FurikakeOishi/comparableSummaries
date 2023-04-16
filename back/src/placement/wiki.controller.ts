@@ -1,4 +1,4 @@
-import { Body, Controller, Header, Post } from '@nestjs/common';
+import { Body, Controller, Get, Header, Post } from '@nestjs/common';
 import { WikiService } from './wiki.service';
 
 @Controller('wiki')
@@ -17,6 +17,11 @@ export class WikiController {
     getWikiPhotos(@Body() data): any{
       console.log('this is the url inside controller: '+this.wikiService.getMainImagesUrlFromWikiArticle(data.article))
        return this.wikiService.getMainImagesUrlFromWikiArticle(data.article)
+    }
+
+    @Get('generateRandomArticle')
+    generateArticles():any{
+      return this.wikiService.generateRandomArticle();
     }
 
 }

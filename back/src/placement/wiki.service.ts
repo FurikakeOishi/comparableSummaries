@@ -8,28 +8,22 @@ const baseWikipediaURL ='https://en.wikipedia.org/wiki/'
 export class WikiService {
 
     getMainImagesUrlFromWikiArticle(wikiURL: string): any{
-        if(wikiURL === '')
-             return 'Empty Article'
-        else{
+
             console.log('inside wiki service: '+wikiURL)
             const articleTitle= this.urlToString(wikiURL)
             console.log('new wiki title: '+articleTitle)
                 return wiki().page(articleTitle)
             .then(page => page.mainImage())
-            .then((res)=>{return res} )
-        }   
+            .then((res)=>{return res} ).catch((err)=>{return 'error'})
+     
       }
 
     getArticleSummary(wikiURL: string): any{
-        if(wikiURL === '')
-             return 'Empty Article'
-        else{
             const articleTitle=this.urlToString(wikiURL)
             console.log('new wiki title: '+articleTitle)
             return wiki().page(articleTitle)
             .then(page => page.summary())
-            .then((res)=>{return res})
-        }
+            .then((res)=>{return res}).catch((err)=>{return 'error' })
     }
     
 

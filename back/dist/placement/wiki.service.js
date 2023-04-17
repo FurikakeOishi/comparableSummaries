@@ -13,27 +13,19 @@ const wikijs_1 = require("wikijs");
 const baseWikipediaURL = 'https://en.wikipedia.org/wiki/';
 let WikiService = class WikiService {
     getMainImagesUrlFromWikiArticle(wikiURL) {
-        if (wikiURL === '')
-            return 'Empty Article';
-        else {
-            console.log('inside wiki service: ' + wikiURL);
-            const articleTitle = this.urlToString(wikiURL);
-            console.log('new wiki title: ' + articleTitle);
-            return (0, wikijs_1.default)().page(articleTitle)
-                .then(page => page.mainImage())
-                .then((res) => { return res; });
-        }
+        console.log('inside wiki service: ' + wikiURL);
+        const articleTitle = this.urlToString(wikiURL);
+        console.log('new wiki title: ' + articleTitle);
+        return (0, wikijs_1.default)().page(articleTitle)
+            .then(page => page.mainImage())
+            .then((res) => { return res; }).catch((err) => { return 'error'; });
     }
     getArticleSummary(wikiURL) {
-        if (wikiURL === '')
-            return 'Empty Article';
-        else {
-            const articleTitle = this.urlToString(wikiURL);
-            console.log('new wiki title: ' + articleTitle);
-            return (0, wikijs_1.default)().page(articleTitle)
-                .then(page => page.summary())
-                .then((res) => { return res; });
-        }
+        const articleTitle = this.urlToString(wikiURL);
+        console.log('new wiki title: ' + articleTitle);
+        return (0, wikijs_1.default)().page(articleTitle)
+            .then(page => page.summary())
+            .then((res) => { return res; }).catch((err) => { return 'error'; });
     }
     async generateRandomArticle() {
         const results = await (0, wikijs_1.default)().random(1);

@@ -19,30 +19,20 @@ let WikiController = class WikiController {
     constructor(wikiService) {
         this.wikiService = wikiService;
     }
-    getWikiSummary(data) {
-        console.log('wiki summary - inside controller: ' + data.article);
-        try {
-            return this.wikiService.getArticleSummary(data.article);
-        }
-        catch (error) {
-            console.log(error);
-        }
+    async getWikiSummary(data, res) {
+        const answer = await this.wikiService.getArticleSummary(data.article);
+        if (answer === 'error')
+            throw new common_1.HttpException('Article Doesn\'t exist, please try another', 400);
+        return answer;
     }
     getWikiPhotos(data) {
-        console.log('this is the url inside controller: ' + this.wikiService.getMainImagesUrlFromWikiArticle(data.article));
-        try {
-            return this.wikiService.getMainImagesUrlFromWikiArticle(data.article);
-        }
-        catch (error) {
-            console.log(error);
-        }
+        return this.wikiService.getMainImagesUrlFromWikiArticle(data.article);
     }
     generateArticles() {
         try {
             return this.wikiService.generateRandomArticle();
         }
         catch (error) {
-            console.log(error);
         }
     }
 };
@@ -50,9 +40,10 @@ __decorate([
     (0, common_1.Post)('wikiSummary'),
     (0, common_1.Header)('Access-Control-Allow-Origin', '*'),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)({ passthrough: true })),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Object)
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
 ], WikiController.prototype, "getWikiSummary", null);
 __decorate([
     (0, common_1.Post)('wikiPhotos'),

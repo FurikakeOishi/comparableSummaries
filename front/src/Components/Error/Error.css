@@ -1,0 +1,73 @@
+.main-error-div{
+    width: auto;
+    height:60px;
+    border-radius: 5px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30%;
+    right: 30%;
+    top: 50vh;
+    background-color: #aa523c ;
+    position: absolute;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#4b271e  0 -3px 0 inset;
+    padding: 20px;
+    
+}
+
+.close-image{
+    width: 40px;
+    height: 30px;
+    top: 5px;
+    left: 0px;
+    position: absolute;
+}
+
+.close-button{
+
+    position: absolute;
+    top:-15%;
+    right:1%;
+    border-radius: 25px;
+    border: 1px solid white;
+    width:40px;
+    
+    background-color: #ffffff00;
+    height: 40px;
+
+}
+
+.error-title{
+    color: aliceblue;
+    text-align: center;
+    margin:0px 20px 0px 0px;
+    font-family: "JetBrains Mono",monospace;
+    font-size: 25px;
+    font-weight:500;
+}
+
+@media only screen 
+and (max-width : 1222px) {
+    .main-error-div{
+        left: 15%;
+        right: 15%;   
+    }
+
+    .error-title{
+        font-size: 20px;
+        margin-top:15px;
+    }
+
+    .close-image{
+        width: 30px;
+        height: 22.5px;
+        top: 3.75px;
+    }
+    
+    .close-button{
+        width:30px;
+        height: 30px;
+        border-radius: 15px;
+    }
+    
+}

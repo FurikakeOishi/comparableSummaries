@@ -155,6 +155,14 @@ button{
 and (max-width : 1222px) {
 /* Styles */
 
+.input-field{
+  height: 100px;
+  line-height: 28px; 
+  line-height: 1;
+  box-sizing: content-box;
+
+}
+
 .generate-button{
     font-size: 14px;
   padding-left: 6%;
@@ -166,12 +174,14 @@ and (max-width : 1222px) {
 
 
 .random-button{
-    font-size: 14px;
+    font-size: 12px;
     width: 90%;
     padding-left: 13%;
+    font-weight: 900;
 }
 .clear-button{
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 900;
     width: 90%;
     padding-left: 20%;
 }

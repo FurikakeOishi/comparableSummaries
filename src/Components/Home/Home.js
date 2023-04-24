@@ -97,27 +97,25 @@ const Home = () => {
       axios.post(`${URL}/wiki/wikiSummary`,{article: inputText}).then(res => {
         console.log(res.data)
         setwikiSummary(res.data)
-        //console.log('res: '+(JSON.stringify(res.data.choices[0].text)))
-        //setOpenaiText(JSON.stringify(res.data.choices[0].text))
+        
 
         axios.post(`${URL}/openai/generateSummary`,{prompt: inputText}).then(res => {
-          console.log(res.data)
-          setOpenaiText(res.data)
-          //console.log('res: '+(JSON.stringify(res.data.choices[0].text)))
-          //setOpenaiText(JSON.stringify(res.data.choices[0].text))
+          // console.log(res.data)
+          // setOpenaiText(res.data)
+          console.log('res: '+(JSON.stringify(res.data.choices[0].text)))
+          setOpenaiText(JSON.stringify(res.data.choices[0].text.replace("\n","")))
 
           axios.post(`${URL}/wiki/wikiPhotos`,{article: inputText}).then(res => {
             console.log('Wiki image url: '+res.data)
             setWikiImageURL(res.data)
-            //const generatedImageURL= JSON.stringify(res.data.data[0].url)
-            //console.log('image URL: '+(generatedImageURL.replace(/"/g,"")))
-            //setImageURL(generatedImageURL.replace(/"/g,""))
+            
+            //only if a wiki image exists, generate an openai image 
             if (res.data !== ''){
               axios.post(`${URL}/openai/generateImage`,{prompt: inputText}).then(res => {
-                console.log(res)
-                //const generatedImageURL= JSON.stringify(res.data.data[0].url)
-                //console.log('image URL: '+(generatedImageURL.replace(/"/g,"")))
-                //setImageURL(generatedImageURL.replace(/"/g,""))
+                // console.log(res)
+                const generatedImageURL= JSON.stringify(res.data.data[0].url)
+                console.log('image URL: '+(generatedImageURL.replace(/"/g,"")))
+                setImageURL(generatedImageURL.replace(/"/g,""))
               })
             }
           })
@@ -150,7 +148,7 @@ const Home = () => {
                 <div className="data-title"><img src={chatgptLogo} className="logo-image"/><h1 className="openai-text-title"><span className="openai-title">OpenAI</span> Output</h1></div>
                 {imageURL !== ''? <img src={imageURL} className="generated-image" alt='Waiting for image'/>  : null}
                   <div className="openai-text-prompt-div">
-                    <Typewriter text={openaiText} speed={1} />
+                    <p  >{openaiText}</p>
                   </div>
               </div>
               {/* Wikipedia data*/}

@@ -1,0 +1,27 @@
+Example 1:
+https://en.wikipedia.org/wiki/Guararapes
+WIKI: 
+Guararapes is a municipality near Araçatuba in the state of São Paulo in Brazil. The population is 33,100 (2020 est.) in an area of 956 km². The elevation is 415 m. This place name comes from the Tupi language, meaning "drums".
+OpenAI:
+_Battle\nThe Guararapes Battle was fought in 1648, during the Dutch occupation of Brazil. It was a turning point in the Dutch-Portuguese War, as the Portuguese forces, led by general Francisco Barreto de Menezes, decisively defeated the Dutch. The Dutch had been trying to take control of the Brazilian city of Recife, but the Portuguese victory at Guararapes put an end to their plans.
+
+
+Example 2:
+https://en.wikipedia.org/wiki/David_C._Rapoport
+WIKI: 
+David Charles Rapoport (born January 7, 1929, Pittsburgh, PA) is a Professor Emeritus of Political Science at University of California, Los Angeles (UCLA) who focuses on the study of terrorism.
+
+OpenAI:
+"\nThe article is about David C. Rapoport, a political scientist and professor emeritus at the University of California, Los Angeles. Rapoport is known for his work on terrorism, which he has studied since the early 1970s. He is the author of several books on the subject, including The Origins of Terrorism: An International Security Reader (1984) and The Four Waves of Modern Terrorism (2005)."
+
+
+
+Example 3:
+https://en.wikipedia.org/wiki/The_20th_Century_Fox_Hour
+WIKI: 
+The 20th Century Fox Hour is an American drama anthology series televised in the United States on CBS from 1955 to 1957. Some of the shows in this series were restored, remastered and shown on the Fox Movie Channel in 2002 under the title Hour of Stars (its title when the series was originally syndicated after 1957). The season one episode Overnight Haul, starring Richard Conte and Lizabeth Scott, was released in Australia as a feature film. 
+OpenAI:
+"\nThe 20th Century Fox Hour is an American anthology television series that aired on CBS from 1955 to 1956. The series presented a mix of genres, including drama, comedy, and musical performances. The show was produced by 20th Century Fox Television."
+
+
+

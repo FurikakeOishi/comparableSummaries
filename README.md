@@ -37,8 +37,7 @@
     <br />
     <br />
     <br />
-   · <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
+  
   </p>
 </div>
  <br />
@@ -74,6 +73,8 @@ Index = (2 * |A ∩ B|) / (|A| + |B|)
 
 ```
 
+![](https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/home.png?raw=true)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -95,16 +96,12 @@ Index = (2 * |A ∩ B|) / (|A| + |B|)
 #### Check out some examples:
 #### 1. The Article given as input: https://en.wikipedia.org/wiki/Guararapes
 
-<div style="display: flex; flex-direction: row; ">
+<br />
 <h4 style="margin-right:20%;">OpenAI  summary and image: </h3>
-<br />
+<p >The Guararapes Battle was fought in 1648, during the Dutch occupation of Brazil. It was a turning point in the Dutch-Portuguese War, as the Portuguese forces, led by general Francisco Barreto de Menezes, decisively defeated the Dutch. The Dutch had been trying to take control of the Brazilian city of Recife, but the Portuguese victory at Guararapes put an end to their plans.</p>
 <h4>Wikipedia summary and image:</h3>
-</div>
-<div style="display: flex; flex-direction: row; ">
-<br />
-<p style="width:150%;">The Guararapes Battle was fought in 1648, during the Dutch occupation of Brazil. It was a turning point in the Dutch-Portuguese War, as the Portuguese forces, led by general Francisco Barreto de Menezes, decisively defeated the Dutch. The Dutch had been trying to take control of the Brazilian city of Recife, but the Portuguese victory at Guararapes put an end to their plans.</p>
-<p style="width:150%;">Guararapes is a municipality near Araçatuba in the state of São Paulo in Brazil. The population is 33,100 (2020 est.) in an area of 956 km². The elevation is 415 m. This place name comes from the Tupi language, meaning "drums".</p>
-</div>
+<p >Guararapes is a municipality near Araçatuba in the state of São Paulo in Brazil. The population is 33,100 (2020 est.) in an area of 956 km². The elevation is 415 m. This place name comes from the Tupi language, meaning "drums".</p>
+
 
 <img src="https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/wiki1.jpg?raw=true" alt="Logo" width="200" height="200" align="right">
 <img src="https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/ai1.png?raw=true" alt="Logo" width="200" height="200">
@@ -113,18 +110,17 @@ Index = (2 * |A ∩ B|) / (|A| + |B|)
 
 
 #### 2. The Article given as input: https://en.wikipedia.org/wiki/David_C._Rapoport
-<div style="display: flex; flex-direction: row; ">
+
+
 <h4 style="margin-right:20%;">OpenAI  summary and image: </h3>
-<br />
+
+<p >The article is about David C. Rapoport, a political scientist and professor emeritus at the University of California, Los Angeles. Rapoport is known for his work on terrorism, which he has studied since the early 1970s. He is the author of several books on the subject, including The Origins of Terrorism: An International Security Reader (1984) and The Four Waves of Modern Terrorism (2005).</p>
+
 <h4>Wikipedia summary and image:</h3>
-</div>
-<div style="display: flex; flex-direction: row; ">
-<br />
-<p style="width:150%;">The article is about David C. Rapoport, a political scientist and professor emeritus at the University of California, Los Angeles. Rapoport is known for his work on terrorism, which he has studied since the early 1970s. He is the author of several books on the subject, including The Origins of Terrorism: An International Security Reader (1984) and The Four Waves of Modern Terrorism (2005).
+
+<p >David Charles Rapoport (born January 7, 1929, Pittsburgh, PA) is a Professor Emeritus of Political Science at University of California, Los Angeles (UCLA) who focuses on the study of terrorism.
 </p>
-<p style="width:150%;">David Charles Rapoport (born January 7, 1929, Pittsburgh, PA) is a Professor Emeritus of Political Science at University of California, Los Angeles (UCLA) who focuses on the study of terrorism.
-</p>
-</div>
+
 
 <img src="https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/wiki2.jpeg?raw=true" alt="Logo" width="200" height="200" align="right">
 <img src="https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/ai2.png?raw=true" alt="Logo" width="200" height="200">
@@ -133,20 +129,13 @@ Index = (2 * |A ∩ B|) / (|A| + |B|)
 
 
 #### 3. The Article given as input: https://en.wikipedia.org/wiki/The_20th_Century_Fox_Hour
-<div style="display: flex; flex-direction: row; ">
 <h4 style="margin-right:20%;">OpenAI  summary and image: </h3>
-<br />
+<p style="width:150%;">The 20th Century Fox Hour is an American anthology television series that aired on CBS from 1955 to 1956. The series presented a mix of genres, including drama, comedy, and musical performances. The show was produced by 20th Century Fox Television.</p>
+
 <h4>Wikipedia summary and image:</h3>
-</div>
-<div style="display: flex; flex-direction: row; ">
-<br />
-<p style="width:150%;">The 20th Century Fox Hour is an American anthology television series that aired on CBS from 1955 to 1956. The series presented a mix of genres, including drama, comedy, and musical performances. The show was produced by 20th Century Fox Television.
 
+<p style="width:150%;">The 20th Century Fox Hour is an American drama anthology series televised in the United States on CBS from 1955 to 1957. Some of the shows in this series were restored, remastered and shown on the Fox Movie Channel in 2002 under the title Hour of Stars (its title when the series was originally syndicated after 1957). The season one episode Overnight Haul, starring Richard Conte and Lizabeth Scott, was released in Australia as a feature film. </p>
 
-</p>
-<p style="width:150%;">The 20th Century Fox Hour is an American drama anthology series televised in the United States on CBS from 1955 to 1957. Some of the shows in this series were restored, remastered and shown on the Fox Movie Channel in 2002 under the title Hour of Stars (its title when the series was originally syndicated after 1957). The season one episode Overnight Haul, starring Richard Conte and Lizabeth Scott, was released in Australia as a feature film. 
-</p>
-</div>
 
 <img src="https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/wiki3.jpg?raw=true" alt="Logo" width="200" height="200" align="right">
 <img src="https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/ai3.png?raw=true" alt="Logo" width="200" height="200">
@@ -154,7 +143,9 @@ Index = (2 * |A ∩ B|) / (|A| + |B|)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Example GIF
 
+![](https://github.com/FurikakeOishi/comparableSummaries/blob/master/public/mdfiles/gifforproject.gif?raw=true)
 
 
 

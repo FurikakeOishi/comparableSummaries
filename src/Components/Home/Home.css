@@ -159,7 +159,14 @@
   top: 50px;
   margin-left: 10%;
 }
+@media only screen 
+and (max-width : 1460px) and (min-width:1415px) {
+  .openai-text-title{
+    
+    font-size: 59px;
 
+  }
+}
 @media only screen 
 and (max-width : 1222px) {
 /* Styles */

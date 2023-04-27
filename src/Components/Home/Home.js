@@ -148,7 +148,7 @@ const Home = () => {
                 <div className="data-title"><img src={chatgptLogo} className="logo-image"/><h1 className="openai-text-title"><span className="openai-title">OpenAI</span> Output</h1></div>
                 {imageURL !== ''? <img src={imageURL} className="generated-image" alt='Waiting for image'/>  : null}
                   <div className="openai-text-prompt-div">
-                    <p  >{openaiText}</p>
+                   {openaiText}
                   </div>
               </div>
               {/* Wikipedia data*/}
